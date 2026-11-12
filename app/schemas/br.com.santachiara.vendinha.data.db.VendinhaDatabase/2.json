@@ -1,0 +1,701 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "34a411ec291b4e95705475d8e1703f2a",
+    "entities": [
+      {
+        "tableName": "grupo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `turma` TEXT NOT NULL, `numeroGrupo` INTEGER NOT NULL, `nome` TEXT NOT NULL, `corIndex` INTEGER NOT NULL, `iniciadoEm` INTEGER NOT NULL, `ativo` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "turma",
+            "columnName": "turma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numeroGrupo",
+            "columnName": "numeroGrupo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "corIndex",
+            "columnName": "corIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "iniciadoEm",
+            "columnName": "iniciadoEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ativo",
+            "columnName": "ativo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "item",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `grupoId` INTEGER NOT NULL, `nome` TEXT NOT NULL, `fotoPath` TEXT NOT NULL, `precoCentavos` INTEGER NOT NULL, `controlaEstoque` INTEGER NOT NULL, `qtdInicial` INTEGER, `qtdDisponivel` INTEGER, `ativo` INTEGER NOT NULL, FOREIGN KEY(`grupoId`) REFERENCES `grupo`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grupoId",
+            "columnName": "grupoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fotoPath",
+            "columnName": "fotoPath",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precoCentavos",
+            "columnName": "precoCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "controlaEstoque",
+            "columnName": "controlaEstoque",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "qtdInicial",
+            "columnName": "qtdInicial",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "qtdDisponivel",
+            "columnName": "qtdDisponivel",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "ativo",
+            "columnName": "ativo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_item_grupoId",
+            "unique": false,
+            "columnNames": [
+              "grupoId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_item_grupoId` ON `${TABLE_NAME}` (`grupoId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "grupo",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "grupoId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "caixa",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `grupoId` INTEGER NOT NULL, `abertoEm` INTEGER NOT NULL, `fechadoEm` INTEGER, `trocoInicialCentavos` INTEGER NOT NULL, `contadoCentavos` INTEGER, `status` TEXT NOT NULL, FOREIGN KEY(`grupoId`) REFERENCES `grupo`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grupoId",
+            "columnName": "grupoId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "abertoEm",
+            "columnName": "abertoEm",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fechadoEm",
+            "columnName": "fechadoEm",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "trocoInicialCentavos",
+            "columnName": "trocoInicialCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contadoCentavos",
+            "columnName": "contadoCentavos",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_caixa_grupoId",
+            "unique": false,
+            "columnNames": [
+              "grupoId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_caixa_grupoId` ON `${TABLE_NAME}` (`grupoId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "grupo",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "grupoId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "venda",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `caixaId` INTEGER NOT NULL, `dataHora` INTEGER NOT NULL, `totalCentavos` INTEGER NOT NULL, `recebidoCentavos` INTEGER NOT NULL, `trocoCentavos` INTEGER NOT NULL, `estornada` INTEGER NOT NULL, `estornadaEm` INTEGER, FOREIGN KEY(`caixaId`) REFERENCES `caixa`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "caixaId",
+            "columnName": "caixaId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataHora",
+            "columnName": "dataHora",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalCentavos",
+            "columnName": "totalCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recebidoCentavos",
+            "columnName": "recebidoCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "trocoCentavos",
+            "columnName": "trocoCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estornada",
+            "columnName": "estornada",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estornadaEm",
+            "columnName": "estornadaEm",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_venda_caixaId",
+            "unique": false,
+            "columnNames": [
+              "caixaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_venda_caixaId` ON `${TABLE_NAME}` (`caixaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "caixa",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "caixaId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "item_venda",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `vendaId` INTEGER NOT NULL, `itemId` INTEGER NOT NULL, `nomeItem` TEXT NOT NULL, `quantidade` INTEGER NOT NULL, `precoUnitCentavos` INTEGER NOT NULL, FOREIGN KEY(`vendaId`) REFERENCES `venda`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vendaId",
+            "columnName": "vendaId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeItem",
+            "columnName": "nomeItem",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantidade",
+            "columnName": "quantidade",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precoUnitCentavos",
+            "columnName": "precoUnitCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_item_venda_vendaId",
+            "unique": false,
+            "columnNames": [
+              "vendaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_item_venda_vendaId` ON `${TABLE_NAME}` (`vendaId`)"
+          },
+          {
+            "name": "index_item_venda_itemId",
+            "unique": false,
+            "columnNames": [
+              "itemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_item_venda_itemId` ON `${TABLE_NAME}` (`itemId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "venda",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "vendaId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "fechamento",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `turma` TEXT NOT NULL, `numeroGrupo` INTEGER NOT NULL, `nomeGrupo` TEXT NOT NULL, `data` INTEGER NOT NULL, `totalCentavos` INTEGER NOT NULL, `numVendas` INTEGER NOT NULL, `trocoInicialCentavos` INTEGER NOT NULL, `contadoCentavos` INTEGER, `resumoJson` TEXT NOT NULL, `imagemPath` TEXT, `caixaId` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "turma",
+            "columnName": "turma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numeroGrupo",
+            "columnName": "numeroGrupo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeGrupo",
+            "columnName": "nomeGrupo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "data",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalCentavos",
+            "columnName": "totalCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numVendas",
+            "columnName": "numVendas",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "trocoInicialCentavos",
+            "columnName": "trocoInicialCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contadoCentavos",
+            "columnName": "contadoCentavos",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "resumoJson",
+            "columnName": "resumoJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imagemPath",
+            "columnName": "imagemPath",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "caixaId",
+            "columnName": "caixaId",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "config",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `senhaHash` TEXT NOT NULL, `senhaSalt` TEXT NOT NULL, `somAtivo` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senhaHash",
+            "columnName": "senhaHash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "senhaSalt",
+            "columnName": "senhaSalt",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "somAtivo",
+            "columnName": "somAtivo",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "turma",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_turma_nome",
+            "unique": true,
+            "columnNames": [
+              "nome"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_turma_nome` ON `${TABLE_NAME}` (`nome`)"
+          }
+        ]
+      },
+      {
+        "tableName": "grupo_catalogo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `turmaId` INTEGER NOT NULL, `numero` INTEGER NOT NULL, `produto` TEXT NOT NULL, FOREIGN KEY(`turmaId`) REFERENCES `turma`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "turmaId",
+            "columnName": "turmaId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numero",
+            "columnName": "numero",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "produto",
+            "columnName": "produto",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_grupo_catalogo_turmaId",
+            "unique": false,
+            "columnNames": [
+              "turmaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_grupo_catalogo_turmaId` ON `${TABLE_NAME}` (`turmaId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "turma",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "turmaId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "registro_venda",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `vendaId` INTEGER NOT NULL, `dataHora` INTEGER NOT NULL, `turma` TEXT NOT NULL, `numeroGrupo` INTEGER NOT NULL, `nomeGrupo` TEXT NOT NULL, `itens` TEXT NOT NULL, `totalCentavos` INTEGER NOT NULL, `recebidoCentavos` INTEGER NOT NULL, `trocoCentavos` INTEGER NOT NULL, `estornada` INTEGER NOT NULL, `estornadaEm` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vendaId",
+            "columnName": "vendaId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dataHora",
+            "columnName": "dataHora",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "turma",
+            "columnName": "turma",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "numeroGrupo",
+            "columnName": "numeroGrupo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeGrupo",
+            "columnName": "nomeGrupo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itens",
+            "columnName": "itens",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalCentavos",
+            "columnName": "totalCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "recebidoCentavos",
+            "columnName": "recebidoCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "trocoCentavos",
+            "columnName": "trocoCentavos",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estornada",
+            "columnName": "estornada",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "estornadaEm",
+            "columnName": "estornadaEm",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_registro_venda_vendaId",
+            "unique": false,
+            "columnNames": [
+              "vendaId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_registro_venda_vendaId` ON `${TABLE_NAME}` (`vendaId`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '34a411ec291b4e95705475d8e1703f2a')"
+    ]
+  }
+}

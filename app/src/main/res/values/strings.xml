@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vendinha</string>
+    <string name="logo_feirinha">Feirinha do Empreendedorismo: poupar, empreender, investir</string>
+
+    <string name="voltar">Voltar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="continuar">Continuar</string>
+    <string name="entrar">Entrar</string>
+    <string name="salvar">Salvar</string>
+    <string name="apagar_digito">Apagar número</string>
+    <string name="digitos_digitados">%1$d números digitados</string>
+    <string name="cadeado_descricao">Área do Organizador. Segure por 2 segundos.</string>
+
+    <string name="senha_criar_titulo">Senha do Organizador</string>
+    <string name="senha_criar_texto">Crie uma senha de 4 a 8 números. Só o professor deve saber.</string>
+    <string name="senha_confirmar_titulo">Digite de novo</string>
+    <string name="senha_confirmar_texto">Para conferir, digite a mesma senha mais uma vez.</string>
+    <string name="senha_diferente">As senhas ficaram diferentes. Crie de novo.</string>
+    <string name="senha_salvar">Salvar senha</string>
+    <string name="senha_errada">Senha errada. Tente de novo.</string>
+    <string name="senha_pedir_titulo">Senha do Organizador</string>
+
+    <string name="editar">Editar</string>
+    <string name="ligado">ligado</string>
+    <string name="desligado">desligado</string>
+    <string name="sair_titulo">Sair do Vendinha?</string>
+    <string name="sair_texto">As vendas ficam salvas no tablet. Para voltar, é só abrir o app de novo.</string>
+    <string name="sair_confirmar">Sair</string>
+
+    <string name="inicio_titulo">Qual é o seu grupo?</string>
+    <string name="inicio_outro">Outro grupo</string>
+    <string name="inicio_confirmar_titulo">Começar a vender?</string>
+    <string name="inicio_comecar">Começar</string>
+    <string name="inicio_outro_titulo">Outro grupo</string>
+    <string name="inicio_outro_turma">Turma</string>
+    <string name="inicio_outro_turma_exemplo">Ex.: 3º A</string>
+    <string name="inicio_outro_nome">Nome do grupo</string>
+    <string name="inicio_outro_nome_exemplo">Ex.: Cookies</string>
+    <string name="inicio_outro_cor">Cor do grupo</string>
+    <string name="grupo_numero">Grupo %1$d</string>
+    <string name="turma_grupo">%1$s · Grupo %2$d</string>
+    <string name="cor_laranja">Laranja</string>
+    <string name="cor_azul">Azul</string>
+    <string name="cor_verde">Verde</string>
+    <string name="cor_roxo">Roxo</string>
+    <string name="cor_rosa">Rosa</string>
+
+    <string name="painel_vendido_hoje">Vendido hoje</string>
+    <string name="painel_vender">Vender</string>
+    <string name="painel_estoque">Estoque</string>
+    <string name="painel_historico">Histórico</string>
+    <string name="painel_produtos">Produtos</string>
+    <string name="painel_fechar_caixa">Fechar caixa</string>
+    <string name="painel_relatorio">Relatório</string>
+    <string name="painel_editar_nome">Mudar o nome do grupo</string>
+    <string name="painel_nome_grupo">Nome do grupo</string>
+    <string name="painel_dica_sem_itens">Primeiro, cadastre o que vocês vão vender.</string>
+    <string name="painel_dica_abrir">Toque em Vender para abrir o caixa.</string>
+    <string name="painel_dica_fechado">Caixa fechado. Chame o organizador.</string>
+    <plurals name="vendas">
+        <item quantity="one">%1$d venda</item>
+        <item quantity="other">%1$d vendas</item>
+    </plurals>
+    <plurals name="alerta_acabando">
+        <item quantity="one">%1$s está acabando: resta %2$d</item>
+        <item quantity="other">%1$s está acabando: restam %2$d</item>
+    </plurals>
+    <string name="alerta_esgotou">%1$s esgotou</string>
+    <string name="alerta_mais">E mais %1$d itens acabando. Veja no Estoque.</string>
+
+    <string name="produtos_titulo">Produtos</string>
+    <string name="produtos_novo">Novo item</string>
+    <string name="produtos_vazio_titulo">Nenhum produto ainda</string>
+    <string name="produtos_vazio_texto">Toque em Novo item e tire a foto do que vocês vão vender.</string>
+    <string name="produto">Produto</string>
+    <string name="produto_desativado">Desativado (não aparece na venda)</string>
+    <string name="sem_limite">sem limite</string>
+    <string name="esgotado">Esgotado</string>
+    <string name="acabando">Acabando</string>
+    <string name="restam_n">restam %1$d</string>
+    <string name="foto_de">Foto de %1$s</string>
+    <string name="produto_novo_titulo">Novo item</string>
+    <string name="produto_editar_titulo">Editar item</string>
+    <string name="produto_tirar_foto">Tirar foto do produto</string>
+    <string name="produto_foto_ajuda">ou escolher da galeria</string>
+    <string name="produto_camera">Tirar foto</string>
+    <string name="produto_trocar_foto">Trocar foto</string>
+    <string name="produto_galeria">Galeria</string>
+    <string name="produto_nome">Nome</string>
+    <string name="produto_nome_exemplo">Ex.: Geladinho de morango</string>
+    <string name="produto_preco">Preço (R$)</string>
+    <string name="produto_preco_exemplo">Ex.: 2,50</string>
+    <string name="produto_preco_fica">Vai custar %1$s</string>
+    <string name="produto_controlar">Controlar quantidade?</string>
+    <string name="produto_controlar_sim">O app conta e avisa quando estiver acabando.</string>
+    <string name="produto_controlar_nao">Vende sem limite. Bom para fatias de bolo.</string>
+    <string name="produto_quantidade">Quantos vocês têm?</string>
+    <string name="produto_quantidade_agora">Quantos têm agora?</string>
+    <string name="produto_quantidade_ajuda">Agora restam %1$d. Chegou mais? Escreva o total.</string>
+    <string name="produto_salvar">Salvar item</string>
+    <string name="produto_desativar">Desativar item</string>
+    <string name="produto_ativar">Ativar item de novo</string>
+    <string name="produto_desativar_ajuda">Desativar tira o item da tela de venda. As vendas feitas continuam no histórico.</string>
+    <string name="produto_erro_foto">Falta a foto do produto.</string>
+    <string name="produto_erro_nome">Falta o nome do produto.</string>
+    <string name="produto_erro_preco">Escreva o preço. Ex.: 2,50</string>
+    <string name="produto_erro_preco_moeda">Use um preço que dá para pagar com moedas: termina em 0 ou 5 centavos.</string>
+    <string name="produto_erro_quantidade">Escreva quantos vocês têm.</string>
+    <string name="produto_erro_foto_falhou">Não deu para usar essa foto. Tente outra.</string>
+    <string name="produto_erro_sem_camera">Este tablet não tem app de câmera. Use a galeria.</string>
+    <string name="produto_erro_sem_galeria">Não achamos a galeria neste tablet.</string>
+
+    <string name="nota_de">Nota de %1$s</string>
+    <string name="moeda_de">Moeda de %1$s</string>
+    <string name="tirar_uma">tirar uma</string>
+    <string name="apagar">Apagar</string>
+    <string name="total">Total</string>
+    <string name="recebido">Recebido</string>
+    <string name="troco">Troco</string>
+    <string name="falta">Falta</string>
+
+    <string name="abrir_titulo">Abrir o caixa</string>
+    <string name="abrir_pergunta">Quanto dinheiro tem na caixinha para dar troco?</string>
+    <string name="abrir_troco_inicial">Troco inicial</string>
+    <string name="abrir_bandeja_vazia">Toque nas notas e moedas que estão na caixinha.</string>
+    <string name="abrir_comecar_com">Começar com %1$s</string>
+    <string name="abrir_sem_troco">Começar sem troco</string>
+
+    <string name="venda_titulo">Vender</string>
+    <string name="venda_vazia">Toque na foto para vender</string>
+    <string name="venda_limpar">Limpar</string>
+    <string name="venda_cobrar">Cobrar</string>
+    <string name="venda_sem_itens">Nenhum produto para vender. Cadastre em Produtos.</string>
+    <string name="venda_cada">%1$s cada</string>
+    <string name="venda_no_pedido">%1$d no pedido</string>
+    <string name="venda_mais">Mais um %1$s</string>
+    <string name="venda_menos">Menos um %1$s</string>
+    <string name="acabando_restam">Acabando: restam %1$d</string>
+    <string name="venda_aviso_esgotou">%1$s esgotou!</string>
+    <string name="venda_aviso_so_tem">Só tem %1$d de %2$s.</string>
+    <string name="venda_aviso_estoque_mudou">Acabou o estoque de %1$s. Confira o pedido.</string>
+    <string name="venda_aviso_caixa_fechado">O caixa está fechado. Chame o organizador.</string>
+
+    <string name="pagamento_titulo">Pagamento</string>
+    <string name="pagamento_pergunta">Quanto o cliente deu?</string>
+    <string name="pagamento_bandeja_vazia">Toque nas notas e moedas que o cliente deu.</string>
+    <string name="pagamento_valor_certinho">Valor certinho</string>
+    <string name="pagamento_confirmar">Confirmar venda</string>
+
+    <string name="pronto_titulo">Venda feita!</string>
+    <string name="pronto_devolva">Devolva para o cliente:</string>
+    <string name="pronto_sem_troco">Não tem troco. Foi o valor certinho!</string>
+    <string name="pronto_proximo">Próximo cliente</string>
+
+    <string name="estoque_titulo">Estoque</string>
+    <string name="estoque_vazio">Nenhum produto ainda.</string>
+    <plurals name="estoque_total_vendido">
+        <item quantity="one">%1$d produto vendido</item>
+        <item quantity="other">%1$d produtos vendidos</item>
+    </plurals>
+    <string name="estoque_comecou_restam">Começou com %1$d · Restam %2$d</string>
+    <string name="estoque_barra">Restam %1$d de %2$d</string>
+    <string name="estoque_vendidos">vendidos</string>
+
+    <string name="historico_titulo">Histórico de vendas</string>
+    <string name="historico_vazio">Nenhuma venda ainda. Bora vender!</string>
+    <string name="historico_recebeu_troco">Recebeu %1$s · Troco %2$s</string>
+    <string name="estornada">Estornada</string>
+    <string name="venda_detalhe_titulo">Venda</string>
+    <string name="venda_estornar">Estornar venda</string>
+    <string name="venda_estornar_ajuda">Use quando o cliente desistir. O dinheiro volta para o cliente e os produtos voltam para o estoque.</string>
+    <string name="venda_estornar_senha">O organizador digita a senha para desfazer esta venda.</string>
+    <string name="venda_estornada_em">Venda estornada às %1$s.</string>
+    <string name="venda_estorno_caixa_fechado">O caixa está fechado. Para estornar, o organizador reabre o caixa.</string>
+
+    <string name="fechar_titulo">Fechar o caixa</string>
+    <string name="total_ganho">Total ganho</string>
+    <string name="campeao">Campeão de vendas</string>
+    <plurals name="vendidos">
+        <item quantity="one">%1$d vendido</item>
+        <item quantity="other">%1$d vendidos</item>
+    </plurals>
+    <plurals name="estornadas">
+        <item quantity="one">%1$d venda estornada (não entra no total)</item>
+        <item quantity="other">%1$d vendas estornadas (não entram no total)</item>
+    </plurals>
+    <string name="fechar_por_item">Quanto vendeu de cada um</string>
+    <string name="fechar_contar">Contar o dinheiro</string>
+    <string name="fechar_pular">Fechar sem contar</string>
+    <string name="fechar_confirmar_titulo">Fechar o caixa?</string>
+    <string name="fechar_confirmar_texto">Depois de fechar, não dá para vender mais. O relatório fica salvo no tablet.</string>
+    <string name="fechar_confirmar_texto_contado">Vocês contaram %1$s. Depois de fechar, não dá para vender mais. O relatório fica salvo no tablet.</string>
+    <string name="fechar_confirmar">Fechar</string>
+    <string name="conferir_titulo">Contar o dinheiro</string>
+    <string name="conferir_esperado">Dinheiro esperado</string>
+    <string name="conferir_contado">Contado</string>
+    <string name="conferir_bateu">Bateu certinho!</string>
+    <string name="conferir_sobrou">Sobrou %1$s</string>
+    <string name="conferir_faltou">Faltou %1$s</string>
+    <string name="conferir_modo_contar">Contar notas e moedas</string>
+    <string name="conferir_modo_digitar">Digitar o valor</string>
+    <string name="conferir_bandeja_vazia">Toque nas notas e moedas que estão na caixinha.</string>
+    <string name="conferir_fechar">Fechar e salvar no histórico</string>
+
+    <string name="relatorio_titulo">Relatório</string>
+    <string name="relatorio_cabecalho">Relatório do caixa</string>
+    <string name="relatorio_campeao">Campeão: %1$s (%2$d)</string>
+    <string name="relatorio_nao_contado">não contado</string>
+    <string name="relatorio_rodape">Vendinha · Colégio Santa Chiara · Aracaju-SE</string>
+    <string name="relatorio_compartilhar">Compartilhar relatório</string>
+    <string name="relatorio_voltar">Voltar</string>
+    <string name="relatorio_sem_app">Nenhum app para compartilhar neste tablet. A imagem ficou salva.</string>
+
+    <string name="org_titulo">Área do Organizador</string>
+    <string name="org_senha_explicacao">Só para o professor ou a equipe de TI.</string>
+    <string name="org_este_tablet">Este tablet</string>
+    <string name="org_sem_grupo">Nenhum grupo vendendo agora</string>
+    <string name="org_caixa_nao_aberto">Caixa ainda não foi aberto</string>
+    <string name="org_caixa_aberto">Caixa aberto, vendendo</string>
+    <string name="org_caixa_fechado">Caixa fechado (só consulta)</string>
+    <string name="org_reabrir">Reabrir caixa</string>
+    <string name="org_reabrir_texto">O grupo volta a poder vender e estornar. Quando fechar de novo, o relatório salvo é atualizado.</string>
+    <string name="org_reabrir_confirmar">Reabrir</string>
+    <string name="org_zerar">Zerar tablet</string>
+    <string name="org_zerar_ajuda">Apaga o grupo, os produtos, as fotos, o caixa e as vendas, para o próximo grupo. Os relatórios salvos ficam.</string>
+    <string name="org_zerar_aviso_aberto">O caixa ainda está aberto. Feche o caixa antes de zerar para não perder o relatório.</string>
+    <string name="org_zerar_titulo">Zerar este tablet?</string>
+    <string name="org_zerar_texto">Vai apagar o grupo, os produtos, as fotos, o caixa e as vendas. Os relatórios salvos continuam aqui. Não dá para desfazer.</string>
+    <string name="org_zerar_confirmar">Zerar</string>
+    <string name="org_som">Som de caixa registradora</string>
+    <string name="org_relatorios">Relatórios salvos</string>
+    <string name="org_relatorios_vazio">Nenhum caixa fechado ainda.</string>
+    <string name="org_backup">Exportar backup</string>
+    <string name="org_apagar_relatorios">Apagar histórico</string>
+    <string name="org_apagar_titulo">Apagar relatórios e registro?</string>
+    <string name="org_apagar_texto">Vai apagar %1$d relatório(s) e todo o registro de vendas deste tablet. Dica: exporte o backup antes.</string>
+    <string name="org_apagar_titulo2">Tem certeza mesmo?</string>
+    <string name="org_apagar_texto2">Depois de apagar, não dá para recuperar os relatórios nem o registro de vendas.</string>
+    <string name="org_apagar_confirmar">Apagar tudo</string>
+
+    <string name="org_feira">Feira</string>
+    <string name="inicio_sem_turmas">Nenhuma turma cadastrada. Use "Outro grupo" ou peça ao organizador para cadastrar.</string>
+    <string name="inicio_turma_sem_grupos">Esta turma ainda não tem grupos.</string>
+    <string name="turmas_titulo">Turmas e grupos</string>
+    <string name="turmas_nova">Nova turma</string>
+    <string name="turmas_criar">Criar turma</string>
+    <string name="turmas_ajuda">Estas turmas aparecem em "Qual é o seu grupo?". Toque numa turma para mudar o nome, apagar ou cuidar dos grupos.</string>
+    <string name="turmas_vazio">Nenhuma turma ainda. Toque em Nova turma.</string>
+    <plurals name="turmas_n_grupos">
+        <item quantity="one">%1$d grupo</item>
+        <item quantity="other">%1$d grupos</item>
+    </plurals>
+    <string name="turma_nome">Nome da turma</string>
+    <string name="turma_nome_exemplo">Ex.: 4º B</string>
+    <string name="turma_erro_existe">Já existe uma turma com esse nome.</string>
+    <string name="turma_erro_nome">Escreva um nome de até 20 letras.</string>
+    <string name="turma_renomear">Mudar nome</string>
+    <string name="turma_apagar">Apagar turma</string>
+    <string name="turma_apagar_titulo">Apagar a turma %1$s?</string>
+    <string name="turma_apagar_texto">A turma e os grupos dela saem da lista. Vendas, relatórios e o registro de vendas continuam salvos.</string>
+    <string name="turma_grupos">Grupos</string>
+    <string name="turma_novo_grupo">Novo grupo</string>
+    <string name="turma_novo_grupo_titulo">Novo grupo (Grupo %1$d)</string>
+    <string name="turma_grupo_produto">O que o grupo vende</string>
+    <string name="turma_grupo_produto_exemplo">Ex.: Brigadeiros</string>
+    <string name="turma_grupo_erro">Escreva um nome de até 40 letras.</string>
+    <string name="turma_adicionar">Adicionar</string>
+    <string name="turma_apagar_grupo">Apagar grupo</string>
+    <string name="turma_apagar_grupo_titulo">Apagar o Grupo %1$d (%2$s)?</string>
+    <string name="turma_apagar_grupo_texto">O grupo sai da lista desta turma. As vendas e os relatórios dele continuam salvos.</string>
+
+    <string name="registro_titulo">Registro de vendas</string>
+    <string name="registro_todos">Todos</string>
+    <string name="registro_vendido">Vendido</string>
+    <string name="registro_recebido_total">Recebido dos clientes</string>
+    <string name="registro_troco_total">Troco devolvido</string>
+    <string name="registro_vazio">Nenhuma venda registrada ainda.</string>
+    <plurals name="registro_compras">
+        <item quantity="one">%1$d compra</item>
+        <item quantity="other">%1$d compras</item>
+    </plurals>
+    <plurals name="registro_estornadas">
+        <item quantity="one">%1$d estornada (fora dos totais)</item>
+        <item quantity="other">%1$d estornadas (fora dos totais)</item>
+    </plurals>
+</resources>
